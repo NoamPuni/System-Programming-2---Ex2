@@ -12,9 +12,7 @@ The project includes the following files:
 - `main.cpp` — Demonstration program showcasing basic matrix usage.
 - `test.cpp` — Unit tests using the **doctest** framework.
 - `Makefile` — Simplifies the build and testing process.
-- `.vscode/` — VS Code configuration files (optional).
-- `doctest.h` — Embedded testing framework.
-
+  
 ---
 
 ## Compilation Instructions
