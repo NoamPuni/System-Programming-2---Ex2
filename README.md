@@ -60,8 +60,7 @@ M_2x2_:(R)
 [ -3 -4 ]
 
 Error: Matrices must have the same size for addition.
-
-
+```
 The program demonstrates:
 - Creating and initializing 2x2 matrices.
 - Performing addition, subtraction, and unary negation.
