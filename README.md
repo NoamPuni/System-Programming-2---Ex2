@@ -1,4 +1,4 @@
-# System Programming 2 — Exercise 2: SquareMat
+# System Programming 2 — Exercise 2: Square Matrices
 
 This project implements a C++ class `SquareMat` for handling square matrices of `double` values.  
 It provides a comprehensive set of features including arithmetic operations, matrix exponentiation, comparison operators, and more.
