@@ -263,13 +263,13 @@ TEST_CASE("SquareMat Compound Assignment") {
     CHECK(mat1[0][1] == 11.0);
     CHECK(mat1[1][0] == 21.5);
     CHECK(mat1[1][1] == 25.0);
-
+    
     mat1 %= 3.0;
     CHECK(mat1[0][0] == 0.0);
     CHECK(mat1[0][1] == 2.0);
-    CHECK(mat1[1][0] == 2.0);
+    CHECK(mat1[1][0] == 0.0);
     CHECK(mat1[1][1] == 1.0);
-
+    
     CHECK_THROWS_AS(mat1 += matrix::SquareMat(3), std::invalid_argument);
     CHECK_THROWS_AS(mat1 -= matrix::SquareMat(3), std::invalid_argument);
     CHECK_THROWS_AS(mat1 *= matrix::SquareMat(3), std::invalid_argument);

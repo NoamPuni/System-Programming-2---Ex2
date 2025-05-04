@@ -237,7 +237,7 @@ matrix::SquareMat matrix::SquareMat::operator*(const SquareMat& other) const {
 }
 
 // Overloads the multiplication operator (*) for scalar multiplication (matrix * scalar).
-matrix::SquareMat matrix::SquareMat::operator*(double scalar) const {
+matrix::SquareMat SquareMat::operator*(double scalar) const {
     SquareMat result(size);
     for (int i = 0; i < size; ++i) {
         for (int j = 0; j < size; ++j) {
@@ -248,7 +248,7 @@ matrix::SquareMat matrix::SquareMat::operator*(double scalar) const {
 }
 
 // Overloads the multiplication operator (*) for scalar multiplication (scalar * matrix).
-matrix::SquareMat matrix::operator*(double scalar, const SquareMat& matrix) {
+matrix::SquareMat operator*(double scalar, const SquareMat& matrix) {
     return matrix * scalar; // Reuse the member operator for efficiency.
 }
 
@@ -467,16 +467,18 @@ matrix::SquareMat& matrix::SquareMat::operator%=(double scalar) {
     if (static_cast<int>(scalar) == 0) {
         throw std::invalid_argument("Cannot perform modulo with a scalar of zero.");
     }
+    SquareMat result(size); // Create a temporary matrix
     for (int i = 0; i < size; ++i) {
         for (int j = 0; j < size; ++j) {
-            data[i][j] = static_cast<int>(data[i][j]) % static_cast<int>(scalar);
+            result[i][j] = static_cast<int>(data[i][j]) % static_cast<int>(scalar);
         }
     }
+    *this = result; // Copy the results back to the original matrix
     return *this;
 }
 
 // Overloads the output stream operator (<<) for the SquareMat class.
-std::ostream& matrix::operator<<(std::ostream& os, const SquareMat& matrix) {
+std::ostream& operator<<(std::ostream& os, const SquareMat& matrix) {
     os << "M_" << matrix.getSize() << "x" << matrix.getSize() << ":\n";
     for (int i = 0; i < matrix.getSize(); ++i) {
         os << "[ ";
