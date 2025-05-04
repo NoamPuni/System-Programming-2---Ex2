@@ -79,11 +79,10 @@ Constructor and Basic Operations: Verifies matrix creation, copy constructor, as
 - Output Stream: Ensures the output stream operator (<<) formats matrices correctly.
 
 To run the tests:
-bash
-
-make test
-
+`make test`
+##
 The test suite will report any failures or errors, ensuring the reliability of the SquareMat class.
+
 ---
 This project was developed as part of the System Programming 2 course to demonstrate proficiency in C++ class design, operator overloading, memory management, and unit testing.
 
